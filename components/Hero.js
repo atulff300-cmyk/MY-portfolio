@@ -18,7 +18,7 @@ export default function Hero() {
           </h2>
           
           <p className="text-base md:text-lg text-zinc-400 font-light max-w-lg mb-10 [transform:translateZ(10px)] leading-relaxed">
-            I'm an Embedded & IoT Engineer passionate about electronics, communication systems, and smart innovations.
+            I'm an Embedded & IoT Engineer passionate about electronics, AI,communication systems, and smart innovations.
           </p>
           
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-10 [transform:translateZ(40px)] w-full">
