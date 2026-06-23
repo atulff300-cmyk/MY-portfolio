@@ -71,76 +71,99 @@ export default function ScrollRobot() {
         className="drop-shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all duration-300 ease-out mt-24 md:mt-16 w-[300px] md:w-[450px]"
       >
         <defs>
-          <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#27272a" />
-            <stop offset="100%" stopColor="#09090b" />
+          <linearGradient id="mecha-blue" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#0284c7" />
+            <stop offset="100%" stopColor="#0f172a" />
           </linearGradient>
-          <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#f59e0b" />
-            <stop offset="100%" stopColor="#d97706" />
+          <linearGradient id="dark-metal" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#334155" />
+            <stop offset="100%" stopColor="#0f172a" />
+          </linearGradient>
+          <linearGradient id="neon-cyan" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#38bdf8" />
+            <stop offset="100%" stopColor="#0ea5e9" />
           </linearGradient>
         </defs>
 
-        {/* Torso */}
+        {/* Mecha Torso */}
         <g 
           className="transition-all duration-[1000ms] ease-out origin-center"
           style={{ transform: `translateY(${torsoY}px)`, opacity: torsoOpacity }}
         >
-          <path d="M140,250 L260,250 L280,450 L120,450 Z" fill="url(#metal)" stroke="#f59e0b" strokeWidth="2" />
-          {/* Core Reactor */}
-          <circle cx="200" cy="320" r="30" fill="#09090b" stroke="url(#neon)" strokeWidth="4" />
-          {/* White Accents */}
-          <circle cx="200" cy="320" r="15" fill="#ffffff" className="animate-pulse shadow-[0_0_20px_#fff]" />
-          <path d="M160,390 L240,390" stroke="#ffffff" strokeWidth="2" />
-          <path d="M170,410 L230,410" stroke="#ffffff" strokeWidth="2" />
-          <path d="M180,430 L220,430" stroke="#ffffff" strokeWidth="2" />
+          {/* Waist/Abdomen (Dark metal mechanics) */}
+          <path d="M170,350 L230,350 L220,450 L180,450 Z" fill="url(#dark-metal)" stroke="#0ea5e9" strokeWidth="1" />
+          <path d="M175,370 L225,370 M178,390 L222,390 M180,410 L220,410 M182,430 L218,430" stroke="#0ea5e9" strokeWidth="2" opacity="0.5" />
+          
+          {/* Main Chest Armor */}
+          <path d="M110,230 L290,230 L260,350 L200,380 L140,350 Z" fill="url(#mecha-blue)" stroke="#38bdf8" strokeWidth="2" />
+          
+          {/* Chest Center Core */}
+          <path d="M180,250 L220,250 L230,330 L200,350 L170,330 Z" fill="url(#dark-metal)" stroke="#0ea5e9" strokeWidth="2" />
+          <rect x="195" y="270" width="10" height="40" rx="2" fill="#0ea5e9" className="animate-pulse shadow-[0_0_15px_#0ea5e9]" />
+          
+          {/* Left/Right Chest Panels */}
+          <path d="M120,250 L160,250 L150,320 L130,300 Z" fill="url(#mecha-blue)" stroke="#0ea5e9" strokeWidth="1" />
+          <path d="M280,250 L240,250 L250,320 L270,300 Z" fill="url(#mecha-blue)" stroke="#0ea5e9" strokeWidth="1" />
+          
+          {/* Accents */}
+          <rect x="125" y="270" width="25" height="6" fill="#0ea5e9" className="shadow-[0_0_10px_#0ea5e9]" />
+          <rect x="250" y="270" width="25" height="6" fill="#0ea5e9" className="shadow-[0_0_10px_#0ea5e9]" />
         </g>
 
         {/* Left Arm (User's Right) */}
         <g 
           className="transition-all duration-700 ease-out"
-          style={{ transform: `rotate(${leftArmRot}deg)`, transformOrigin: '270px 270px', opacity: torsoOpacity }}
+          style={{ transform: `rotate(${leftArmRot}deg)`, transformOrigin: '290px 250px', opacity: torsoOpacity }}
         >
-          {/* Shoulder */}
-          <circle cx="270" cy="270" r="20" fill="url(#metal)" stroke="#f59e0b" strokeWidth="2" />
-          {/* Arm */}
-          <rect x="260" y="270" width="20" height="110" rx="10" fill="url(#metal)" stroke="#ffffff" strokeWidth="1" />
-          {/* Hand/Pointer */}
-          <circle cx="270" cy="380" r="15" fill="#ffffff" />
-          <polygon points="270,395 260,420 280,420" fill="#f59e0b" className="drop-shadow-[0_0_10px_#f59e0b]" />
+          {/* Massive Shoulder Pad */}
+          <path d="M270,210 L330,210 L340,280 L260,280 Z" fill="url(#mecha-blue)" stroke="#38bdf8" strokeWidth="2" />
+          <path d="M280,220 L320,220 L325,270 L275,270 Z" fill="url(#dark-metal)" />
+          {/* Upper Arm */}
+          <rect x="285" y="280" width="30" height="60" fill="url(#dark-metal)" stroke="#0ea5e9" strokeWidth="1" />
+          {/* Forearm */}
+          <path d="M275,340 L325,340 L315,440 L285,440 Z" fill="url(#mecha-blue)" stroke="#38bdf8" strokeWidth="2" />
+          <rect x="295" y="360" width="10" height="30" fill="#0ea5e9" className="shadow-[0_0_10px_#0ea5e9]" />
+          {/* Claw Hand */}
+          <path d="M290,440 L280,480 M300,440 L300,485 M310,440 L320,480" stroke="url(#dark-metal)" strokeWidth="5" strokeLinecap="round" />
         </g>
 
         {/* Right Arm (User's Left) */}
         <g 
           className="transition-all duration-700 ease-out"
-          style={{ transform: `rotate(${rightArmRot}deg)`, transformOrigin: '130px 270px', opacity: torsoOpacity }}
+          style={{ transform: `rotate(${rightArmRot}deg)`, transformOrigin: '110px 250px', opacity: torsoOpacity }}
         >
-          {/* Shoulder */}
-          <circle cx="130" cy="270" r="20" fill="url(#metal)" stroke="#f59e0b" strokeWidth="2" />
-          {/* Arm */}
-          <rect x="120" y="270" width="20" height="110" rx="10" fill="url(#metal)" stroke="#ffffff" strokeWidth="1" />
-          {/* Hand/Pointer */}
-          <circle cx="130" cy="380" r="15" fill="#ffffff" />
-          <polygon points="130,395 120,420 140,420" fill="#f59e0b" className="drop-shadow-[0_0_10px_#f59e0b]" />
+          {/* Massive Shoulder Pad */}
+          <path d="M70,210 L130,210 L140,280 L60,280 Z" fill="url(#mecha-blue)" stroke="#38bdf8" strokeWidth="2" />
+          <path d="M80,220 L120,220 L125,270 L75,270 Z" fill="url(#dark-metal)" />
+          {/* Upper Arm */}
+          <rect x="85" y="280" width="30" height="60" fill="url(#dark-metal)" stroke="#0ea5e9" strokeWidth="1" />
+          {/* Forearm */}
+          <path d="M75,340 L125,340 L115,440 L85,440 Z" fill="url(#mecha-blue)" stroke="#38bdf8" strokeWidth="2" />
+          <rect x="95" y="360" width="10" height="30" fill="#0ea5e9" className="shadow-[0_0_10px_#0ea5e9]" />
+          {/* Claw Hand */}
+          <path d="M80,440 L70,480 M100,440 L100,485 M110,440 L120,480" stroke="url(#dark-metal)" strokeWidth="5" strokeLinecap="round" />
         </g>
 
-        {/* Head */}
+        {/* Mecha Head */}
         <g 
           className="transition-all duration-[1200ms] ease-out"
           style={{ transform: `translateY(${headY}px)`, opacity: headOpacity }}
         >
           {/* Neck */}
-          <rect x="185" y="210" width="30" height="40" fill="#27272a" />
-          {/* Main Head */}
-          <rect x="150" y="130" width="100" height="90" rx="20" fill="url(#metal)" stroke="#ffffff" strokeWidth="2" />
-          {/* Visor */}
-          <rect x="160" y="160" width="80" height="30" rx="10" fill="#09090b" />
-          {/* Glowing Eyes */}
-          <circle cx="180" cy="175" r="6" fill="#f59e0b" className="animate-pulse" />
-          <circle cx="220" cy="175" r="6" fill="#f59e0b" className="animate-pulse" />
-          {/* Antenna */}
-          <rect x="198" y="90" width="4" height="40" fill="#f59e0b" />
-          <circle cx="200" cy="85" r="8" fill="#ffffff" className="animate-bounce drop-shadow-[0_0_15px_#fff]" />
+          <rect x="180" y="200" width="40" height="30" fill="url(#dark-metal)" stroke="#0ea5e9" strokeWidth="1" />
+          {/* Helmet Base */}
+          <path d="M165,160 L235,160 L245,210 L155,210 Z" fill="url(#mecha-blue)" stroke="#38bdf8" strokeWidth="2" />
+          {/* Helmet Top/Dome */}
+          <path d="M170,160 L230,160 L210,130 L190,130 Z" fill="url(#dark-metal)" stroke="#0ea5e9" strokeWidth="1" />
+          {/* Antennas/Ears */}
+          <rect x="145" y="150" width="6" height="50" fill="url(#dark-metal)" />
+          <rect x="249" y="150" width="6" height="50" fill="url(#dark-metal)" />
+          <line x1="148" y1="150" x2="148" y2="100" stroke="#0ea5e9" strokeWidth="3" />
+          <line x1="252" y1="150" x2="252" y2="100" stroke="#0ea5e9" strokeWidth="3" />
+          
+          {/* Glowing Visor (Horizontal Slit) */}
+          <rect x="170" y="180" width="60" height="10" fill="#0ea5e9" className="shadow-[0_0_20px_#0ea5e9] animate-pulse" />
+          <polygon points="195,190 205,190 200,200" fill="#0ea5e9" />
         </g>
 
       </svg>

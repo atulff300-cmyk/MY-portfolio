@@ -133,7 +133,7 @@ export default function Projects() {
             </div>
           </div>
           
-          <div className="max-w-4xl mx-auto transform hover:-translate-y-2 transition-transform duration-500">
+          <div className="max-w-5xl mx-auto transform scale-105 md:scale-110 hover:scale-[1.15] hover:-translate-y-2 transition-all duration-500 my-8">
             <ProjectCard {...featuredProject} />
           </div>
         </div>

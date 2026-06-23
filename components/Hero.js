@@ -49,11 +49,10 @@ export default function Hero() {
           
           {/* Main User Image */}
           <div className="relative w-56 sm:w-72 md:w-80 h-72 sm:h-96 md:h-[28rem] rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(245,158,11,0.2)] border-2 border-amber-500/20 z-10">
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-10"></div>
             <img 
-              src="/mypic.png" 
+              src="/ChatGPT%20Image%20Jun%2024,%202026,%2003_11_49%20AM.png" 
               alt="Atul Kumar" 
-              className="w-full h-full object-cover filter contrast-125"
+              className="w-full h-full object-cover"
             />
           </div>
           
