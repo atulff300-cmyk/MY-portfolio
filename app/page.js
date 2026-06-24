@@ -34,7 +34,7 @@ export default function Home() {
       </div>
       
       <footer className="relative z-20 py-12 text-center text-zinc-600 border-t border-zinc-900 bg-[#0a0a0a]">
-        <p className="font-medium tracking-widest text-sm uppercase">© {new Date().getFullYear()} Atul Kumar. All rights reserved.</p>
+        <p className="font-medium tracking-widest text-sm uppercase">© {new Date().getFullYear()} <span className="font-serif italic text-amber-500 font-bold text-lg">A</span>. All rights reserved.</p>
       </footer>
     </main>
   );

@@ -10,8 +10,10 @@ export default function Hero() {
         {/* Left Content Column */}
         <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left [transform-style:preserve-3d] [transform:translateZ(40px)] z-20">
           <p className="text-xl md:text-2xl text-amber-500 font-medium mb-2 tracking-wide">Hi, I'm</p>
-          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-zinc-100 tracking-tighter mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] [transform:translateZ(30px)] uppercase">
-            Atul Kumar
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter mb-4 [transform:translateZ(30px)] uppercase">
+            <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-br from-amber-300 via-amber-500 to-orange-600 drop-shadow-[0_0_25px_rgba(245,158,11,0.6)] px-4">
+              A
+            </span>
           </h1>
           <h2 className="text-lg sm:text-xl md:text-2xl text-zinc-300 font-medium tracking-widest mb-6 uppercase [transform:translateZ(20px)] flex flex-wrap justify-center md:justify-start items-center">
             Embedded & IoT Engineer <span className="text-amber-500 mx-2 md:mx-3">|</span> Innovator <span className="text-amber-500 mx-2 md:mx-3">|</span> Future Engineer
@@ -51,7 +53,7 @@ export default function Hero() {
           <div className="relative w-56 sm:w-72 md:w-80 h-72 sm:h-96 md:h-[28rem] rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(245,158,11,0.2)] border-2 border-amber-500/20 z-10">
             <img 
               src="/ChatGPT%20Image%20Jun%2024,%202026,%2003_11_49%20AM.png" 
-              alt="Atul Kumar" 
+              alt="A" 
               className="w-full h-full object-cover"
             />
           </div>

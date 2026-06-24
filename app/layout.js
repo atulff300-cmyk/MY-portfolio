@@ -4,7 +4,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
-  title: "Atul Kumar | Portfolio",
+  title: "A | Portfolio",
   description: "ECE Student, Embedded Systems Explorer, and IoT Developer",
 };
 
