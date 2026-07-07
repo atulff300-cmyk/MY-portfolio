@@ -8,11 +8,15 @@ export default function Skills() {
     },
     {
       title: "Embedded & IoT",
-      skills: ["ESP32", "Arduino IDE", "Wokwi", "Sensors (PIR, LDR)"]
+      skills: ["ESP32", "STM32", "FreeRTOS", "UART/SPI/I2C", "CAN", "Sensors"]
     },
     {
-      title: "Tools & Core Skills",
-      skills: ["Git", "Problem Solving", "Teamwork", "Adaptability"]
+      title: "Tools & Core",
+      skills: ["GitHub", "Git", "Linux", "Problem Solving", "Teamwork"]
+    },
+    {
+      title: "Currently Learning",
+      skills: ["PCB Design", "TinyML", "Embedded Linux", "CAN Protocol"]
     }
   ];
 
@@ -22,9 +26,9 @@ export default function Skills() {
       <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-amber-500/5 to-transparent pointer-events-none"></div>
       
       <div className="max-w-5xl mx-auto relative z-10">
-        <h2 className="text-3xl md:text-5xl font-black mb-16 text-zinc-100 tracking-tight text-center uppercase drop-shadow-md">Skills Matrix</h2>
+        <h2 className="text-3xl md:text-5xl font-black mb-16 text-zinc-100 tracking-tight text-center uppercase drop-shadow-md">Skills & Roadmap</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, idx) => (
             <div 
               key={idx} 

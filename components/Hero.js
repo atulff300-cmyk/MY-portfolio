@@ -19,11 +19,11 @@ export default function Hero() {
             </span>
           </h1>
           <h2 className="text-lg sm:text-xl md:text-2xl text-zinc-300 font-medium tracking-widest mb-6 uppercase [transform:translateZ(20px)] flex flex-wrap justify-center md:justify-start items-center">
-            Embedded & IoT Engineer <span className="text-amber-500 mx-2 md:mx-3">|</span> Innovator <span className="text-amber-500 mx-2 md:mx-3">|</span> Future Engineer
+            ECE Student <span className="text-amber-500 mx-2 md:mx-3">|</span> Embedded Systems & IoT Developer
           </h2>
           
           <p className="text-base md:text-lg text-zinc-400 font-light max-w-lg mb-10 [transform:translateZ(10px)] leading-relaxed">
-            I'm an Embedded & IoT Engineer passionate about electronics, AI,communication systems, and smart innovations.
+            I design intelligent embedded systems and IoT solutions using ESP32, Embedded C and modern firmware development. Passionate about building reliable hardware that solves real-world problems.
           </p>
           
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-10 [transform:translateZ(40px)] w-full">
@@ -32,6 +32,10 @@ export default function Hero() {
             </a>
             <a href="#about" className="w-full sm:w-auto btn-3d px-6 md:px-8 py-4 bg-transparent border-2 border-zinc-600 text-zinc-300 font-semibold rounded-lg hover:border-amber-500 hover:text-amber-500 tracking-wider transition-colors flex justify-center text-sm md:text-base">
               ABOUT ME
+            </a>
+            <a href="/resume.pdf" download="Atul_Kumar_Resume.pdf" className="w-full sm:w-auto btn-3d px-6 md:px-8 py-4 bg-transparent border-2 border-amber-500 text-amber-500 font-semibold rounded-lg hover:bg-amber-500/10 tracking-wider transition-colors flex justify-center items-center gap-2 text-sm md:text-base">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              DOWNLOAD RESUME
             </a>
           </div>
 

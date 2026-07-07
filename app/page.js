@@ -7,6 +7,9 @@ import Skills from "@/components/Skills";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import ScrollRobot from "@/components/ScrollRobot";
+import InteractiveDashboard from "@/components/InteractiveDashboard";
+import GithubStats from "@/components/GithubStats";
+import Blog from "@/components/Blog";
 
 export default function Home() {
   return (
@@ -27,14 +30,17 @@ export default function Home() {
           <About />
           <Experience />
           <Projects />
+          <InteractiveDashboard />
           <Skills />
+          <GithubStats />
           <Certifications />
+          <Blog />
           <Contact />
         </div>
       </div>
       
       <footer className="relative z-20 py-12 text-center text-zinc-600 border-t border-zinc-900 bg-[#0a0a0a]">
-        <p className="font-medium tracking-widest text-sm uppercase">© {new Date().getFullYear()} <span className="font-serif italic text-amber-500 font-bold text-lg mr-1">A</span> Kumar. All rights reserved.</p>
+        <p className="font-medium tracking-widest text-sm uppercase">© {new Date().getFullYear()} Designed & Developed by <span className="font-serif italic text-amber-500 font-bold text-lg mx-1">A</span> Kumar.</p>
       </footer>
     </main>
   );

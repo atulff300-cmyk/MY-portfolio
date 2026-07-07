@@ -12,7 +12,7 @@ export default function About() {
             
             <p className="text-base md:text-xl leading-relaxed text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300 relative z-10 [transform:translateZ(20px)]">
               I am an Embedded & IoT Engineer with a strong foundation in Embedded C, C, C++, Python, and hardware-software integration. 
-              I am highly experienced in ESP32-based embedded systems and smart automation projects. 
+              Hands-on experience with ESP32 based embedded systems and smart automation projects. 
               <br /><br />
               My core interest lies at the intersection of software development and embedded systems, 
               building hardware that communicates seamlessly with software. I am a quick learner with good communication 
