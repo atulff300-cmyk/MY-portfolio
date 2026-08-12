@@ -12,39 +12,42 @@ const ProjectCard = ({ title, stack, description, link, imageFallback = "bg-grad
   };
 
   return (
-    <div className="flex flex-col bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-zinc-200 h-full group hover:-translate-y-2 transition-transform duration-500">
+    <div 
+      onClick={handleClick}
+      className={`flex flex-col bg-[#0d0d0d]/80 backdrop-blur-md rounded-[2.5rem] overflow-hidden shadow-2xl border border-zinc-800/80 h-full group hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(245,158,11,0.15)] hover:border-amber-500/30 transition-all duration-500 ${link ? 'cursor-pointer' : ''}`}
+    >
       {/* Image Area Placeholder - in real app you'd use an <img> or Next/Image */}
       <div className={`h-64 w-full ${imageFallback} relative overflow-hidden flex items-center justify-center p-8`}>
-        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/5 transition-colors duration-500"></div>
         {/* Placeholder for actual image content */}
-        <div className="relative z-10 text-white/50 font-black italic text-4xl uppercase tracking-tighter opacity-50 group-hover:scale-110 transition-transform duration-700">
+        <div className="relative z-10 text-white/90 font-black italic text-4xl uppercase tracking-tighter opacity-80 group-hover:scale-110 transition-transform duration-700 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">
           {title.split(' ')[0]}
         </div>
       </div>
       
       {/* Content Area */}
       <div className="p-8 md:p-10 flex flex-col flex-grow">
-        {/* Mission tag placeholder (optional, inspired by screenshot) */}
+        {/* Mission tag placeholder */}
         <div className="mb-6 flex">
-          <span className="text-emerald-500 text-[10px] font-black uppercase tracking-[0.2em]">The Mission</span>
+          <span className="text-amber-500 text-[10px] font-black uppercase tracking-[0.2em]">The Mission</span>
         </div>
 
         {/* Tech Stack Tags */}
         <div className="flex flex-wrap gap-2 mb-6">
           {tags.map((tag, idx) => (
-            <span key={idx} className="bg-zinc-900 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+            <span key={idx} className="bg-zinc-800 text-zinc-300 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm border border-zinc-700/50">
               {tag}
             </span>
           ))}
         </div>
 
         {/* Title */}
-        <h3 className="text-2xl md:text-3xl font-black italic text-zinc-900 uppercase tracking-tight mb-5 leading-none">
+        <h3 className="text-2xl md:text-3xl font-black italic text-zinc-100 uppercase tracking-tight mb-5 leading-none group-hover:text-amber-500 transition-colors duration-300">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-zinc-600 text-sm leading-relaxed mb-10 flex-grow font-medium">
+        <p className="text-zinc-400 text-sm leading-relaxed mb-10 flex-grow font-light">
           {descText}
         </p>
 
@@ -52,8 +55,11 @@ const ProjectCard = ({ title, stack, description, link, imageFallback = "bg-grad
         <div className="flex flex-wrap gap-3 mt-auto">
           {link && (
             <button 
-              onClick={handleClick}
-              className="bg-zinc-900 hover:bg-zinc-800 text-white px-6 py-3.5 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2 transition-colors shadow-md"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleClick();
+              }}
+              className="bg-amber-500 hover:bg-amber-400 text-[#0a0a0a] px-6 py-3.5 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-2 transition-colors shadow-md duration-300"
             >
               VIEW PROJECT
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
