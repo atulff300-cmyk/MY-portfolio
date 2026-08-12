@@ -1,6 +1,9 @@
 "use client";
+import { useState } from "react";
 
 export default function Contact() {
+  const [showResumes, setShowResumes] = useState(false);
+
   return (
     <section id="contact" className="px-6 md:px-20 bg-transparent flex flex-col items-center">
       <div className="max-w-3xl w-full mx-auto relative z-10 text-center bg-[#0a0a0a]/70 backdrop-blur-md p-6 md:p-16 rounded-2xl border border-zinc-800/50 shadow-sm">
@@ -48,18 +51,53 @@ export default function Contact() {
               href="mailto:atulff300@gmail.com" 
               className="w-full sm:w-auto btn-3d px-6 py-3 bg-[#111]/80 backdrop-blur-md border border-zinc-700 text-zinc-200 font-bold rounded-xl flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:border-amber-500 hover:text-amber-500 transition-colors tracking-wide uppercase text-sm"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 0 1 2.22 0L21 8M5 19h14a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"></path></svg>
               Email
             </a>
 
             {/* Download Resume */}
-            <a 
-              href="/Atul_s_Kumar_Resume_06_06_2026%20(1).pdf" download="A kumar resume.pdf"
-              className="w-full sm:w-auto btn-3d px-6 py-3 bg-transparent border border-amber-500 text-amber-500 font-bold rounded-xl flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(245,158,11,0.1)] hover:bg-amber-500/10 transition-colors tracking-wide uppercase text-sm"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              Resume
-            </a>
+            <div className="relative w-full sm:w-auto">
+              <button 
+                onClick={() => setShowResumes(!showResumes)}
+                className="w-full sm:w-auto btn-3d px-6 py-3 bg-transparent border border-amber-500 text-amber-500 font-bold rounded-xl flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(245,158,11,0.1)] hover:bg-amber-500/10 transition-colors tracking-wide uppercase text-sm cursor-pointer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Resume
+                <svg className={`w-4 h-4 ml-1 transition-transform duration-200 ${showResumes ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              
+              {showResumes && (
+                <>
+                  <div className="fixed inset-0 z-30" onClick={() => setShowResumes(false)}></div>
+                  <div className="absolute right-0 left-0 sm:left-auto sm:right-0 mt-2 w-full sm:w-60 bg-[#121212] border border-zinc-800 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] overflow-hidden z-40">
+                    <a 
+                      href="/Atul_kumar_IOT_Resume.pdf" 
+                      download="Atul_Kumar_IoT_Resume.pdf"
+                      onClick={() => setShowResumes(false)}
+                      className="flex items-center gap-3 px-5 py-4 text-zinc-300 hover:text-amber-500 hover:bg-zinc-900/80 transition-colors border-b border-zinc-900"
+                    >
+                      <div className="w-2 h-2 rounded-full bg-amber-500"></div>
+                      <div className="flex flex-col text-left">
+                        <span className="font-bold text-sm tracking-wide normal-case text-zinc-300">IoT / Embedded Resume</span>
+                        <span className="text-[10px] text-zinc-500 normal-case">Hardware, ESP32, Firmware</span>
+                      </div>
+                    </a>
+                    <a 
+                      href="/Atul_Kumar_software_resume.pdf" 
+                      download="Atul_Kumar_Software_Resume.pdf"
+                      onClick={() => setShowResumes(false)}
+                      className="flex items-center gap-3 px-5 py-4 text-zinc-300 hover:text-amber-500 hover:bg-zinc-900/80 transition-colors"
+                    >
+                      <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                      <div className="flex flex-col text-left">
+                        <span className="font-bold text-sm tracking-wide normal-case text-zinc-300">Software Resume</span>
+                        <span className="text-[10px] text-zinc-500 normal-case">Fullstack, Next.js, API, ML</span>
+                      </div>
+                    </a>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
       </div>
     </section>
